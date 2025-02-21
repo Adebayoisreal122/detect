@@ -10,6 +10,8 @@ const video = document.getElementById("video");
             })
             .catch(err => console.error("Camera access denied:", err));
 
+
+            document.body.innerHTML += `<p style="color:red;">Error: ${err.name} - ${err.message}</p>`;
         // Load the TensorFlow.js model
         async function loadModel() {
             return await cocoSsd.load();
